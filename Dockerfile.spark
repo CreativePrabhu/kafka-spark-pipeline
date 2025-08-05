@@ -1,0 +1,9 @@
+FROM bitnami/spark:3.4.1
+
+WORKDIR /app
+
+COPY spark_streaming.py .
+
+RUN pip install --no-cache-dir pyspark
+
+CMD ["spark-submit", "spark_streaming.py"]
